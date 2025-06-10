@@ -15,8 +15,11 @@ public class Truck implements Runnable{
 
     @Override
     public void run() {
+//        synchronized (elevator) {} - так будет работать, но убивает многопоточку. Все ждут пока один тред выполнит работу.
         for (int i = 0; i < nRaces; i++) {
-            elevator.add(capacity);
+            synchronized (elevator) {
+                elevator.add(capacity);
+            }
         }
     }
 }

@@ -20,7 +20,7 @@ public class Elevator {
         this.name = name;
     }
 
-    public synchronized void add(int portion) {
+    public void add(int portion) {
         currentVolume = currentVolume + portion;
     }
 
